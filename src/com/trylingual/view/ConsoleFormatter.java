@@ -7,15 +7,16 @@ import com.trylingual.model.WordPair;
 
 public class ConsoleFormatter {
 	
-	public List<String> format(List<WordPair> words) {
+	public List<String> format(WordPair[] words) {
 		List<String> formattedWPs = new ArrayList<>();		
-		for (WordPair w : words)
-			formattedWPs.add(formatWordPair(w));
+		for (int i = 0; i < words.length ; i++)
+			formattedWPs.add(formatWordPair(words[i]));
 		return formattedWPs;
 	}
 
 	private String formatWordPair(WordPair w) {
-		String formattedWP = String.format("%-15s", w.getWord());
+		String formattedWP = String.format("%-5s", w.id()) + "| ";
+		formattedWP += String.format("%-15s", w.getWord());
 		formattedWP += "| ";
 		formattedWP += String.format("%-25s", w.getPair());
 		formattedWP += formatWordPairTags(w.getTags());

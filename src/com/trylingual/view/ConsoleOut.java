@@ -8,7 +8,7 @@ public class ConsoleOut {
 		System.out.println("Your WordBank contains the following words:");
 		System.out.println();
 		System.out.println("------------------------------------------------------------");
-		System.out.println(String.format("%-14s %-1s %-24s %-1s %s", "Word", "|", "Translation", "|", "Tags"));
+		System.out.println(String.format("%-4s %-1s %-14s %-1s %-24s %-1s %s", "ID", "|", "Word", "|", "Translation", "|", "Tags"));
 		System.out.println("------------------------------------------------------------");
 		for (String s : output)
 			System.out.println(s);

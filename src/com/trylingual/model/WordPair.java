@@ -8,6 +8,7 @@ public class WordPair {
 	private String left;
 	private String right;
 	private List<String> tags;
+	private int id;
 	
 	public WordPair(String left) {
 		this(left, "");
@@ -22,6 +23,10 @@ public class WordPair {
 	public void setPair(String right) {
 		if (right != null)
 			this.right = right;
+	}
+	
+	public void setID(int id) {
+		this.id = id;
 	}
 	
 	public void tag(String newTag) {
@@ -45,6 +50,10 @@ public class WordPair {
 	@Override
 	public String toString() {
 		return this.left + " -> " + this.right;
+	}
+
+	public int id() {
+		return this.id;
 	}
 
 }
