@@ -20,10 +20,13 @@ public class App {
 		
 		// UPDATE A WORD
 		WordPair[] words = wplService.list();
-		words[12].setPair("");
-		words[14].setPair("");
+		
+		words[4].changeWordTo("frog");
+		words[4].changePairTo("sapo");
+		wplService.update(words[4]);
+
+		words[1].changePairTo("");
 		wplService.update(words[1]);
-		wplService.update(words[2]);
 		
 		// DELETE A WORD
 		WordPair deleted = words[8];

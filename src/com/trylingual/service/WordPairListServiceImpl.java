@@ -37,8 +37,7 @@ public class WordPairListServiceImpl implements WordPairListService {
 
 	@Override
 	public void update(WordPair word) {
-		// TODO Auto-generated method stub
-		
+		wpDAO.update(word);
 	}
 
 }

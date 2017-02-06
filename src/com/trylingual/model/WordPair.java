@@ -19,8 +19,13 @@ public class WordPair {
 		this.right = right;
 		this.tags = new ArrayList<>();
 	}
+	
+	public void changeWordTo(String left) {
+		if (left != null)
+			this.left = left;
+	}
 
-	public void setPair(String right) {
+	public void changePairTo(String right) {
 		if (right != null)
 			this.right = right;
 	}
@@ -55,6 +60,7 @@ public class WordPair {
 	public int id() {
 		return this.id;
 	}
+
 
 }
 
