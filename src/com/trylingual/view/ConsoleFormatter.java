@@ -5,8 +5,9 @@ import java.util.List;
 
 import com.trylingual.model.WordPair;
 
-public class ConsoleFormatter {
+public class ConsoleFormatter implements ViewFormatter {
 	
+	@Override
 	public List<String> format(WordPair[] words) {
 		List<String> formattedWPs = new ArrayList<>();		
 		for (int i = 0; i < words.length ; i++)

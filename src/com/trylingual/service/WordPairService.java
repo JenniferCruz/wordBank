@@ -1,12 +1,11 @@
 package com.trylingual.service;
 
-import java.util.List;
 import com.trylingual.model.WordPair;
 
 /**
  * 
  * */
-public interface WordPairListService {
+public interface WordPairService {
 	
 	WordPair[] list();
 	void add(WordPair word);

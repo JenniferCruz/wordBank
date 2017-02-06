@@ -1,17 +1,19 @@
 package com.trylingual.app;
 
 import com.trylingual.model.WordPair;
-import com.trylingual.service.WordPairListService;
-import com.trylingual.service.WordPairListServiceImpl;
+import com.trylingual.service.WordPairService;
+import com.trylingual.service.WordPairServiceImpl;
 import com.trylingual.view.ConsoleFormatter;
 import com.trylingual.view.ConsoleOut;
+import com.trylingual.view.Renderer;
+import com.trylingual.view.ViewFormatter;
 
 public class App {
 	
 	public static void main(String[] args) {
 		// TODO: Make interfaces
 		
-		WordPairListService wplService = new WordPairListServiceImpl();
+		WordPairService wplService = new WordPairServiceImpl();
 		
 		// ADD A FEW WORDS
 		wplService.add(new WordPair("Uncouth","tosco"));
@@ -34,7 +36,12 @@ public class App {
 		
 		// SEND TO VIEW. It'll load some preloaded data also
 		words = wplService.list();
-		new ConsoleOut().render(new ConsoleFormatter().format(words));
+		
+		Renderer view = new ConsoleOut();
+		ViewFormatter formatter = new ConsoleFormatter();
+		
+		view.render(formatter.format(words));
+		
 		System.out.println("\nDeleted word: " + deleted);
 	}
 	

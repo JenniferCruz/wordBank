@@ -2,8 +2,9 @@ package com.trylingual.view;
 
 import java.util.List;
 
-public class ConsoleOut {
+public class ConsoleOut implements Renderer {
 	
+	@Override
 	public void render(List<String> output) {
 		System.out.println("Your WordBank contains the following words:");
 		System.out.println();

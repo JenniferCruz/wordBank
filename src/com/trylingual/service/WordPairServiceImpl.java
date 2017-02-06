@@ -8,11 +8,11 @@ import com.trylingual.dao.WordPairDAOSql;
 import com.trylingual.model.WordPair;
 import com.trylingual.model.WordPairList;
 
-public class WordPairListServiceImpl implements WordPairListService {
+public class WordPairServiceImpl implements WordPairService {
 	
 	private final WordPairDAO wpDAO;
 	
-	public WordPairListServiceImpl() {
+	public WordPairServiceImpl() {
 		wpDAO = new WordPairDAOSql();
 	}
 
