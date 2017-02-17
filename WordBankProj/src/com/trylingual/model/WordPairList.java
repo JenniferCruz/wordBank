@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordPairList {
+	// TODO: Implement equals / hashCode for Model Objs
+
 	private List<WordPair> words;
 	
 	public WordPairList() {

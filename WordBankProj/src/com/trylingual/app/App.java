@@ -11,31 +11,31 @@ import com.trylingual.view.ViewFormatter;
 public class App {
 	
 	public static void main(String[] args) {
-		// TODO: Make interfaces
+		// TODO: don't use id property here
 		
-		WordPairService wplService = new WordPairServiceImpl();
+		WordPairService wordPairService = new WordPairServiceImpl();
 		
 		// ADD A FEW WORDS
-		wplService.add(new WordPair("Uncouth","tosco"));
-		wplService.add(new WordPair("Bric-a-brac","baratijas"));
-		wplService.add(new WordPair("Bleak","Sombrio"));
-		
+		wordPairService.add(new WordPair("Uncouth","tosco"));
+		wordPairService.add(new WordPair("Bric-a-brac","baratijas"));
+		wordPairService.add(new WordPair("Bleak","Sombrio"));
+//		
 		// UPDATE A WORD
-		WordPair[] words = wplService.list();
+		WordPair[] words = wordPairService.list();
 		
 		words[4].changeWordTo("frog");
 		words[4].changePairTo("sapo");
-		wplService.update(words[4]);
+		wordPairService.update(words[4]);
 
 		words[1].changePairTo("");
-		wplService.update(words[1]);
+		wordPairService.update(words[1]);
 		
 		// DELETE A WORD
 		WordPair deleted = words[8];
-		wplService.delete(deleted.id());
+		wordPairService.delete(deleted.id());
 		
 		// SEND TO VIEW. It'll load some preloaded data also
-		words = wplService.list();
+		words = wordPairService.list();
 		
 		Renderer view = new ConsoleOut();
 		ViewFormatter formatter = new ConsoleFormatter();
