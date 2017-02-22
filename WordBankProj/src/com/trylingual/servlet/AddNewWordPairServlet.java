@@ -18,8 +18,8 @@ public class AddNewWordPairServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/WEB-INF/index.jsp";
-        // request.getRequestDispatcher(url).forward(request, response);
-        getServletContext().getRequestDispatcher(url).forward(request, response); // How are this and previous line different?
+        request.getRequestDispatcher(url).forward(request, response);
+        // getServletContext().getRequestDispatcher(url).forward(request, response); // How are this and previous line different?
     }
 
 	/**
@@ -28,7 +28,7 @@ public class AddNewWordPairServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		WordPair w = new WordPair(request.getParameter("word"), request.getParameter("translation"));
 		new WordPairServiceImpl().add(w);
-		doGet(request, response);
+		response.sendRedirect("index.html");
 	}
 
 }
