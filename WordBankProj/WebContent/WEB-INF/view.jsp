@@ -51,9 +51,10 @@
 	</div>
 	
 	<c:import url="/WEB-INF/jsp-snippets/required-js.jsp" />
+	<c:import url="/WEB-INF/jsp-snippets/add-new-word-modal.jsp" />
 	<!-- Must be imported after jQuery imports -->
 	<c:import url="/WEB-INF/jsp-snippets/confirm-delete-modal.jsp" />
-	<c:import url="/WEB-INF/jsp-snippets/add-new-word-modal.jsp" />
+	
 	
 	
 		

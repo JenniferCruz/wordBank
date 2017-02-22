@@ -29,20 +29,18 @@
 	    </div>
 	  </div>
 	  <input type="hidden" name="id" value="${wordPair.id()}">
-	  <%
-	  System.out.println("In JSP"); 
-	  
-	  System.out.println(request.getAttribute("wordPair")); 
-	  %>
 	  <!-- TODO: Allow for categories -->
 	  <div class="form-group">
 	    <div class="col-sm-offset-2 col-sm-10">
 	      <button type="submit" class="btn btn-default">Save changes</button>
-		  <button type="button" class="btn btn-default" onclick="index.html">Cancel</button>
+		  <a href="index.html" class="btn btn-default">Cancel</a>
 		  <a href="index.html" class="pull-right">Go back to list<i class="glyphicon glyphicon-menu-right"></i></a>
 	    </div>
 	  </div>
 	</form>
+	
+	<c:import url="/WEB-INF/jsp-snippets/required-js.jsp" />
+	<c:import url="/WEB-INF/jsp-snippets/add-new-word-modal.jsp" />
 	
 </body>
 </html>
