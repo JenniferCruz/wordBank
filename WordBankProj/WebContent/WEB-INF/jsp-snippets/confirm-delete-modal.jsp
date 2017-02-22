@@ -14,6 +14,7 @@
 	        	<input type="hidden" value="" name="id" />	        	
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>	      
 	        	<input type="submit" class="btn btn-primary" value="Yes, finish it!" onclick="delete.html?id=${wp.id()}"/>
+	        	<!-- TODO: is the onclick property necessary? -->
 	        </form>
 	      </div>
 		          

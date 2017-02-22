@@ -12,21 +12,21 @@
 	      	<form class="form-inline" method="post" action="new-word.html" >
 			  <div class="form-group">
 			    <label class="sr-only" for="input-word">Word</label>
-			    <input type="text" class="form-control" id="input-word" placeholder="Word or Expression">
+			    <input type="text" class="form-control" id="input-word" placeholder="Word or Expression" name="word">
 			  </div>
 			  <div class="form-group">
 			    <label class="sr-only" for="input-translation">Translation</label>
-			    <input type="password" class="form-control" id="input-translation" placeholder="Translation">
+			    <input type="text" class="form-control" id="input-translation" placeholder="Translation" name="translation">
 			  </div>
 			  <!-- TODO: Allow to add categories -->
-			  <button type="submit" class="btn btn-default">Save</button>
+			  <div class="modal-footer">
+		        <button type="submit" class="btn btn-primary">Save changes</button>
+	    	    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		      </div>
 			</form>
 	        
 	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
-	      </div>
+
 	    </div>
 	  </div>
 	</div>	
