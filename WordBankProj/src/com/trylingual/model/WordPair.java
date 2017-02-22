@@ -54,7 +54,9 @@ public class WordPair {
 	
 	@Override
 	public String toString() {
-		return this.left + " -> " + this.right;
+		return "[id: " + this.id 
+				+ " | word: " + this.left 
+				+ " | translation: " + this.right + "]";
 	}
 
 	public int id() {

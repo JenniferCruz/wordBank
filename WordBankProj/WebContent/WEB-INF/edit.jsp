@@ -15,19 +15,25 @@
 
 	<c:import url="/WEB-INF/jsp-snippets/header.jsp" />
 
-	<form class="form-horizontal">
+	<form class="form-horizontal" method="post" action="edit.html">
 	  <div class="form-group">
 	    <label for="word-1" class="col-sm-2 control-label">Word</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="word-1" value="${wordPair.getWord()}">
+	      <input type="text" class="form-control" id="word-1" name="word" value="${wordPair.getWord()}">
 	    </div>
 	  </div>
 	  <div class="form-group">
 	    <label for="word-2" class="col-sm-2 control-label">Translation</label>
 	    <div class="col-sm-10">
-	      <input type="text" class="form-control" id="word-2" value="${wordPair.getPair()}">
+	      <input type="text" class="form-control" id="word-2" name="translation" value="${wordPair.getPair()}">
 	    </div>
 	  </div>
+	  <input type="hidden" name="id" value="${wordPair.id()}">
+	  <%
+	  System.out.println("In JSP"); 
+	  
+	  System.out.println(request.getAttribute("wordPair")); 
+	  %>
 	  <!-- TODO: Allow for categories -->
 	  <div class="form-group">
 	    <div class="col-sm-offset-2 col-sm-10">
