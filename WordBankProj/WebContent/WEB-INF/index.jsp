@@ -8,18 +8,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Trylingual!</title>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" > 
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" > 
+	<link rel="stylesheet" type="text/css" href="css/styles.css" > 
 	<style>
-		body {
-			width: 800px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		
-		td .glyphicon {
-			margin-left: 10px;
-			margin-right: 5px;
-		}
 	</style>
 </head>
 <body>

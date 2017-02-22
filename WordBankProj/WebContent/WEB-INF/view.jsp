@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,6 +9,8 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" > 
 </head>
 <body>
+
+	<c:import url="/WEB-INF/header.jsp" />
 
 	< Go back to list
 
@@ -27,11 +30,10 @@
 		  <li>...</li> <!-- TODO: generate categories -->
 		</ul>
 	</div>
-	
-	edit
-	delete
-	
-	
-
+	<div class="options">
+		<a href="#"><i class="glyphicon glyphicon-menu-left"></i>Go back to list</a>
+		<a href="#"><i class="glyphicon glyphicon-pencil"></i>Edit</a>
+		<a href="#"><i class="glyphicon glyphicon-trash"></i>Delete</a>	
+	</div>
 </body>
 </html>
