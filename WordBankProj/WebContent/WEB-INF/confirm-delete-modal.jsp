@@ -10,21 +10,24 @@
 	      
 	      
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-	        <form method="post" action="delete.html">
-	        	<input type="hidden" value="${wordPair.id}" name="id" />
-	        	<input type="hidden" value="${wordPair}" name="palabra" />
-	        	<input type="submit" value="Yes, finish it!" />
+	        <form method="post" action="delete.html" class="form-inline">
+	        	<input type="hidden" value="" name="id" />	        	
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>	      
+	        	<input type="submit" class="btn btn-primary" value="Yes, finish it!" onclick="delete.html?id=${wp.id()}"/>
 	        </form>
 	      </div>
-		      
-	      
-	      <!-- div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-	        <button type="submit" class="btn btn-primary" formmethod="post" formaction="delete.html?id=${wp.id()}">Yes, delete</button>
-	        <button type="button" class="btn btn-primary" onclick="delete.html?id=${wp.id()}">Yes, delete</button>	        	        
-	      </div>
-	    </div> -->
+		      s	    
+	    <script>
+	    	// relies on calling tag having the property data-word-id="${wp.id()}"
+			$('#confirmDeleteModal').on('show.bs.modal', function(e) {
+			    var wID = $(e.relatedTarget).data('word-id');
+		    	console.log(wID);
+			    $(e.currentTarget).find('input[name="id"]').val(wID);
+			    // code from http://jsfiddle.net/k7FC2/
+			});
+		</script>
 	    
 	  </div>
 	</div>	
+	
+	

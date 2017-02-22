@@ -26,11 +26,10 @@ public class DeleteWordPairServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//int i = Integer.parseInt(request.getParameter("id"));
-		WordPair w = (WordPair) request.getAttribute("palabra");
-		//System.out.println("i: " + i);	
-		System.out.println("w: " + w);	
+		String idParam = request.getParameter("id");
+		int id = (idParam != null && idParam.length() > 0) ? Integer.parseInt(idParam) : -1;
+		System.out.println("id: " + id);	
+		// TODO: Implement deletion
 		doGet(request, response);
 	}
 

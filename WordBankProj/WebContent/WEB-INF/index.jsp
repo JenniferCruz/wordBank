@@ -34,7 +34,7 @@
 				<td class="options">
 					<a href="view.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-eye-open"></i></a> <!-- TODO: Servlet - to practice -->
 					<a href="edit.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-pencil"></i></a> <!-- TODO: Servlet - to practice -->
-					<a href="#confirmDeleteModal" data-toggle="modal"><i class="glyphicon glyphicon-trash"></i></a> <!-- TODO: Pass id to modal -->
+					<a href="#confirmDeleteModal" data-toggle="modal" data-word-id="${wp.id()}"><i class="glyphicon glyphicon-trash"></i></a> <!-- TODO: Pass id to modal -->
 					<a href="#tagWordFormModal" data-toggle="modal"><i class="glyphicon glyphicon-tags"></i></a> <!-- TODO: Pass id to modal -->
 				</td>
 			</tr>
@@ -102,17 +102,9 @@
 	</div>	
 
 
+	<c:import url="/WEB-INF/required-js.jsp" />
+	<!-- Must be imported after jQuery imports -->
 	<c:import url="/WEB-INF/confirm-delete-modal.jsp" />
-	
-	
-	
-
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-		crossorigin="anonymous"></script>
 
 </body>
 </html>
