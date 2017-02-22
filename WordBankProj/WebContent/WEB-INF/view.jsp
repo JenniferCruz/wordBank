@@ -48,7 +48,6 @@
 		<a href="index.html"><i class="glyphicon glyphicon-menu-left"></i>Go back to list</a>
 		<a href="edit.html?id=${wordPair.id()}" class="pull-right"><i class="glyphicon glyphicon-pencil"></i>Edit</a>
 		<a href="#confirmDeleteModal" class="pull-right" data-toggle="modal" data-word-id="${wordPair.id()}"><i class="glyphicon glyphicon-trash"></i>Delete</a>	
-		<!-- TODO: import modal's jsp -->
 	</div>
 	
 	<c:import url="/WEB-INF/jsp-snippets/required-js.jsp" />

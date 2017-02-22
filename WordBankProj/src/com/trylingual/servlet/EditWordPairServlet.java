@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.trylingual.model.WordPair;
+import com.trylingual.service.WordPairServiceImpl;
+
 public class EditWordPairServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -14,15 +17,16 @@ public class EditWordPairServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int id = Integer.parseInt(request.getParameter("id"));
+		WordPair w = new WordPairServiceImpl().getWordPair(id);
+		request.setAttribute("wordPair", w);
+		request.getRequestDispatcher("/WEB-INF/edit.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

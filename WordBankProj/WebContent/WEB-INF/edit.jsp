@@ -1,12 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Editing word...</title>
+	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" > 
+	<link rel="stylesheet" type="text/css" href="css/styles.css" > 
 </head>
 <body>
 
+	<c:import url="/WEB-INF/jsp-snippets/header.jsp" />
+
+	<form class="form-horizontal">
+	  <div class="form-group">
+	    <label for="word-1" class="col-sm-2 control-label">Word</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="word-1" value="${wordPair.getWord()}">
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="word-2" class="col-sm-2 control-label">Translation</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="word-2" value="${wordPair.getPair()}">
+	    </div>
+	  </div>
+	  <!-- TODO: Allow for categories -->
+	  <div class="form-group">
+	    <div class="col-sm-offset-2 col-sm-10">
+	      <button type="submit" class="btn btn-default">Save changes</button>
+		  <button type="button" class="btn btn-default" onclick="index.html">Cancel</button>
+		  <a href="index.html" class="pull-right">Go back to list<i class="glyphicon glyphicon-menu-right"></i></a>
+	    </div>
+	  </div>
+	</form>
+	
 </body>
 </html>
