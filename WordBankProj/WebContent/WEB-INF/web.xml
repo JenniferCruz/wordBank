@@ -20,7 +20,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AddNewWord</servlet-name>
-    <url-pattern>/new-expression</url-pattern>
+    <url-pattern>/new-word.html</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>EditWord</servlet-name>

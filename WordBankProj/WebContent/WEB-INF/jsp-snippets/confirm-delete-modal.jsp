@@ -16,7 +16,7 @@
 	        	<input type="submit" class="btn btn-primary" value="Yes, finish it!" onclick="delete.html?id=${wp.id()}"/>
 	        </form>
 	      </div>
-		      s	    
+		          
 	    <script>
 	    	// relies on calling tag having the property data-word-id="${wp.id()}"
 			$('#confirmDeleteModal').on('show.bs.modal', function(e) {
@@ -27,7 +27,8 @@
 			});
 		</script>
 	    
-	  </div>
-	</div>	
+		</div>
+		</div>	
+	</div>
 	
 	

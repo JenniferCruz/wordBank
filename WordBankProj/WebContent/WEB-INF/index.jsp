@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<c:import url="/WEB-INF/header.jsp" />
+	<c:import url="/WEB-INF/jsp-snippets/header.jsp" />
 	
 	<table class="table table-hover">
 		<tr>
@@ -41,39 +41,6 @@
 		</c:forEach>
 	</table>
 	
-	<!-- Modal: Form to add new word -->
-	<!-- TODO: Add servlet on form submit -->
-	<div class="modal fade" id="newWordFormModal" tabindex="-1" role="dialog" aria-labelledby="newWordModal">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="newWordModal">You are adding a new word</h4>
-	      </div>
-	      <div class="modal-body">
-
-	      	<form class="form-inline">
-			  <div class="form-group">
-			    <label class="sr-only" for="input-word">Word</label>
-			    <input type="text" class="form-control" id="input-word" placeholder="Word or Expression">
-			  </div>
-			  <div class="form-group">
-			    <label class="sr-only" for="input-translation">Translation</label>
-			    <input type="password" class="form-control" id="input-translation" placeholder="Translation">
-			  </div>
-			  <!-- TODO: Allow to add categories -->
-			  <button type="submit" class="btn btn-default">Save</button>
-			</form>
-	        
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-	        <button type="button" class="btn btn-primary">Save changes</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>	
-
 	<!-- Modal: Form to add tags to a word -->
 	<!-- TODO: Add servlet on form submit -->
 	<div class="modal fade" id="tagWordFormModal" tabindex="-1" role="dialog" aria-labelledby="tagWordModal">
@@ -102,9 +69,10 @@
 	</div>	
 
 
-	<c:import url="/WEB-INF/required-js.jsp" />
+	<c:import url="/WEB-INF/jsp-snippets/required-js.jsp" />
 	<!-- Must be imported after jQuery imports -->
-	<c:import url="/WEB-INF/confirm-delete-modal.jsp" />
+	<c:import url="/WEB-INF/jsp-snippets/add-new-word-modal.jsp" />
+	<c:import url="/WEB-INF/jsp-snippets/confirm-delete-modal.jsp" />
 
 </body>
 </html>
