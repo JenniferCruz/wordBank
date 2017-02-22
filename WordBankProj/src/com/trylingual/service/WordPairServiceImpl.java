@@ -42,8 +42,9 @@ public class WordPairServiceImpl implements WordPairService {
 
 	@Override
 	public WordPair getWordPair(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		WordPair w = wpDAO.get(id); 
+		System.out.println("Servicing " + w);
+		return w;
 	}
 
 }

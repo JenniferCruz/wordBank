@@ -20,6 +20,7 @@ public class ViewWordPairServlet extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		WordPair word = new WordPairServiceImpl().getWordPair(id);
 		request.setAttribute("wordPair", word);
+		System.out.println("Servlet set: " + (WordPair) request.getAttribute("wordPair"));
 		String url = "/WEB-INF/view.jsp";
         request.getRequestDispatcher(url).forward(request, response);
 	}

@@ -85,4 +85,10 @@ public class WordPairDAOFile implements WordPairDAO {
 		
 	}
 
+	@Override
+	public WordPair get(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

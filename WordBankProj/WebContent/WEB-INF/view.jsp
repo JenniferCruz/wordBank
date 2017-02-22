@@ -7,33 +7,51 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Trylingual! | Viewing... </title> <!-- add word -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" > 
+	<link rel="stylesheet" type="text/css" href="css/styles.css" > 
 </head>
 <body>
 
 	<c:import url="/WEB-INF/header.jsp" />
 
-	< Go back to list
+	<%if (request.getAttribute("wordPair") == null) {%>
 
-	<div class="container">
-	  <div class="jumbotron">
-	    <p>Bleak</p> 
-	  </div>
-	  <div class="jumbotron">
-	    <p>Sombrio</p> 
-	  </div>
-	</div>
+        <div class="alert alert-danger" role="alert"><strong>Oh no!</strong> There was a problem loading this word from the database...</div>
+
+    <%} else { %>
 	
-	<div class="page-header">
-		Categories 
-		<!-- TODO: Change message if there are not categories and add button to add categories -->
-		<ul class="list-unstyled">
-		  <li>...</li> <!-- TODO: generate categories -->
-		</ul>
-	</div>
+		<div class="container">
+		  <div class="col-md-4 well word-view">
+		    <p>${wordPair.getWord()}</p> 
+		  </div>
+		  <div class="translates-to col-md-2">
+		  	<i class="glyphicon glyphicon-chevron-left"></i>
+		  	<i>translates to</i>
+		  	<i class="glyphicon glyphicon-chevron-right"></i>
+		  </div>
+		  <div class="col-md-4 well word-view">
+		    <p>${wordPair.getPair()}</p> 
+		  </div>
+		</div>
+		
+		<div class="page-header">
+			<h2>Categories</h2> 
+			<!-- TODO: Change message if there are not categories and add button to add categories -->
+			<ul class="list-group categories">
+			  <li class="list-group-item">...</li> <!-- TODO: generate categories -->
+			  <li class="list-group-item">...</li> <!-- TODO: generate categories -->
+			</ul>
+		</div>	
+
+    <%}%>
+
+
+
+	
 	<div class="options">
-		<a href="#"><i class="glyphicon glyphicon-menu-left"></i>Go back to list</a>
-		<a href="#"><i class="glyphicon glyphicon-pencil"></i>Edit</a>
-		<a href="#"><i class="glyphicon glyphicon-trash"></i>Delete</a>	
+		<a href="index.html"><i class="glyphicon glyphicon-menu-left"></i>Go back to list</a>
+		<a href="edit.html?id=${wordPair.id()}" class="pull-right"><i class="glyphicon glyphicon-pencil"></i>Edit</a>
+		<a href="#confirmDeleteModal" class="pull-right"><i class="glyphicon glyphicon-trash"></i>Delete</a>	
+		<!-- TODO: import modal's jsp -->
 	</div>
 </body>
 </html>

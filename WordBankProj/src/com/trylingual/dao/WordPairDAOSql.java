@@ -91,4 +91,27 @@ public class WordPairDAOSql implements WordPairDAO {
 		}
 	}
 
+	@Override
+	public WordPair get(int id) {
+		WordPair word = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost/wordbank";
+			Connection con = DriverManager.getConnection(url, "root", "password");
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM words WHERE wID=" + id + ";");
+			if(rs.next()) {
+				word = new WordPair(rs.getString("word"), rs.getString("pair"));
+				word.setID(rs.getInt("wID"));				
+			}
+			// TODO: Add categories
+		} catch (ClassNotFoundException cnfe) {
+			cnfe.printStackTrace();
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+		System.out.println("Back from SQL " + word);
+		return word;
+	}
+
 }

@@ -14,6 +14,6 @@ public interface WordPairDAO {
 	void save(WordPair word);
 	void update(WordPair word);
 	void delete(int wID);
-	//WordPair get(int wID); // ?	
+	WordPair get(int id);
 	
 }

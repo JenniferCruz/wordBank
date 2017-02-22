@@ -4,7 +4,32 @@ body {
 	margin-right: auto;
 }
 
-td .glyphicon {
+.glyphicon {
 	margin-left: 10px;
 	margin-right: 5px;
+}
+
+.container {
+	/* overwrite Bootstrap */
+	width: inherit;
+	display: flex;
+	justify-content: space-between;
+}
+
+.word-view {
+	/* overwrite Bootstrap */
+	/* margin: 5px; */
+}
+
+.categories {
+	width: 750px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.translates-to {
+	text-align: center;
+	display: flex;
+    align-items: center;
+}
 }
