@@ -23,4 +23,28 @@
     <servlet-name>AddNewWord</servlet-name>
     <url-pattern>/new-expression</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>EditWord</servlet-name>
+    <servlet-class>com.trylingual.servlet.EditWordPairServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditWord</servlet-name>
+    <url-pattern>/edit.html</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ViewWord</servlet-name>
+    <servlet-class>com.trylingual.servlet.ViewWordPairServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewWord</servlet-name>
+    <url-pattern>/view.html</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteWord</servlet-name>
+    <servlet-class>com.trylingual.servlet.DeleteWordPairServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteWord</servlet-name>
+    <url-pattern>/delete.html</url-pattern>
+  </servlet-mapping>
 </web-app>

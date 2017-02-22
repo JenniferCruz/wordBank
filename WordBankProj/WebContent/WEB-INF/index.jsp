@@ -29,7 +29,7 @@
 		data-toggle="modal" data-target="#newWordFormModal">NEW WORD</button>
 	
 	<!-- Why doesn't load? -->
-	<a class="btn btn-default pull-right" href="/new-expression" role="button">BAD</a>
+	<a class="btn btn-default pull-right" href="new-expression" role="button">BAD</a>
 	
 	<div class="page-header">
 	  <h1>TryLingual! <small>Your word bank contains the following words.</small></h1>
@@ -50,23 +50,23 @@
 				<td class="translation">${wp.getPair()}</td>
 				<td class="tags">...</td>        
 				<td class="options">
-					<a href="#" value="test"><i class="glyphicon glyphicon-eye-open"></i></a> <!-- TODO: Servlet - to practice -->
-					<a href="#" value="test"><i class="glyphicon glyphicon-pencil"></i></a> <!-- TODO: Servlet - to practice -->
-					<a href="#"><i class="glyphicon glyphicon-trash"></i></a> <!-- TODO: Servlet - to practice -->
-					<a href="#"><i class="glyphicon glyphicon-tags"></i></a> <!-- TODO: Modal form -->
+					<a href="view.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-eye-open"></i></a> <!-- TODO: Servlet - to practice -->
+					<a href="edit.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-pencil"></i></a> <!-- TODO: Servlet - to practice -->
+					<a href="#confirmDeleteModal" data-toggle="modal"><i class="glyphicon glyphicon-trash"></i></a> <!-- TODO: Pass id to modal -->
+					<a href="#tagWordFormModal" data-toggle="modal"><i class="glyphicon glyphicon-tags"></i></a> <!-- TODO: Pass id to modal -->
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
 	
-	<!-- Modal -->
+	<!-- Modal: Form to add new word -->
 	<!-- TODO: Add servlet on form submit -->
-	<div class="modal fade" id="newWordFormModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade" id="newWordFormModal" tabindex="-1" role="dialog" aria-labelledby="newWordModal">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">You are adding a new word</h4>
+	        <h4 class="modal-title" id="newWordModal">You are adding a new word</h4>
 	      </div>
 	      <div class="modal-body">
 
@@ -91,6 +91,54 @@
 	    </div>
 	  </div>
 	</div>	
+
+	<!-- Modal: Form to add tags to a word -->
+	<!-- TODO: Add servlet on form submit -->
+	<div class="modal fade" id="tagWordFormModal" tabindex="-1" role="dialog" aria-labelledby="tagWordModal">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="tagWordModal">Tags for ... </h4>
+	      </div>
+	      <div class="modal-body">
+			<!-- TODO: form -->	  
+			<form class="form-horizontal">
+				<input type="text" class="form-control" placeholder="category">
+				<input type="text" class="form-control" placeholder="category">
+				<input type="text" class="form-control" placeholder="category">
+				<input type="text" class="form-control" placeholder="category">
+				<input type="text" class="form-control" placeholder="category">
+			</form>      
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+
+
+	<!-- Modal: Confirm delete -->
+	<!-- TODO: Add servlet on form submit -->
+	<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="deleteModal">Are you sure you want to delete this word?</h4> <!-- TODO: Add word -->
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	        <button type="button" class="btn btn-primary">Yes, delete</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>	
+	
+	
+	
 
 
 

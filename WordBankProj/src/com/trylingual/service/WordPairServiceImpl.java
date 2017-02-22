@@ -40,4 +40,10 @@ public class WordPairServiceImpl implements WordPairService {
 		wpDAO.update(word);
 	}
 
+	@Override
+	public WordPair getWordPair(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

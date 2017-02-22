@@ -11,5 +11,6 @@ public interface WordPairService {
 	void add(WordPair word);
 	void delete(int wID);
 	void update(WordPair word);
+	WordPair getWordPair(int id);
 	
 }
