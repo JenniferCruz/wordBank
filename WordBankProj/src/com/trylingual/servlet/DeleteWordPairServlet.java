@@ -1,11 +1,15 @@
 package com.trylingual.servlet;
 
 import java.io.IOException;
+import java.util.Enumeration;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.trylingual.model.WordPair;
 
 public class DeleteWordPairServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,6 +27,10 @@ public class DeleteWordPairServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		//int i = Integer.parseInt(request.getParameter("id"));
+		WordPair w = (WordPair) request.getAttribute("palabra");
+		//System.out.println("i: " + i);	
+		System.out.println("w: " + w);	
 		doGet(request, response);
 	}
 

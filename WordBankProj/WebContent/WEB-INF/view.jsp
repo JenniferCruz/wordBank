@@ -50,8 +50,16 @@
 	<div class="options">
 		<a href="index.html"><i class="glyphicon glyphicon-menu-left"></i>Go back to list</a>
 		<a href="edit.html?id=${wordPair.id()}" class="pull-right"><i class="glyphicon glyphicon-pencil"></i>Edit</a>
-		<a href="#confirmDeleteModal" class="pull-right"><i class="glyphicon glyphicon-trash"></i>Delete</a>	
+		<a href="#confirmDeleteModal" class="pull-right" data-toggle="modal"><i class="glyphicon glyphicon-trash"></i>Delete</a>	
 		<!-- TODO: import modal's jsp -->
 	</div>
+	
+	<c:import url="/WEB-INF/confirm-delete-modal.jsp" />
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+		crossorigin="anonymous"></script>
+		
 </body>
 </html>

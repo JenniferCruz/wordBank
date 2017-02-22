@@ -102,22 +102,7 @@
 	</div>	
 
 
-	<!-- Modal: Confirm delete -->
-	<!-- TODO: Add servlet on form submit -->
-	<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="deleteModal">Are you sure you want to delete this word?</h4> <!-- TODO: Add word -->
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-	        <button type="button" class="btn btn-primary">Yes, delete</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>	
+	<c:import url="/WEB-INF/confirm-delete-modal.jsp" />
 	
 	
 	

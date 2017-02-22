@@ -61,6 +61,10 @@ public class WordPair {
 		return this.id;
 	}
 	
+	public int getId() {
+		return this.id();
+	}
+
 	@Override
 	public boolean equals(Object other) {
 		if (other == null)

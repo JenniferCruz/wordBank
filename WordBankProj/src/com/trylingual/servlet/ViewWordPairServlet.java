@@ -19,8 +19,9 @@ public class ViewWordPairServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		WordPair word = new WordPairServiceImpl().getWordPair(id);
+		System.out.println("Got from service: " + word);
 		request.setAttribute("wordPair", word);
-		System.out.println("Servlet set: " + (WordPair) request.getAttribute("wordPair"));
+		System.out.println(" Servlet set: " + (WordPair) request.getAttribute("wordPair"));
 		String url = "/WEB-INF/view.jsp";
         request.getRequestDispatcher(url).forward(request, response);
 	}
