@@ -12,7 +12,6 @@
     <servlet-name>listing</servlet-name>
     <url-pattern>/index.html</url-pattern>
     <url-pattern>/list</url-pattern>
-    <url-pattern>/wordpairs</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>AddNewWord</servlet-name>
@@ -37,6 +36,7 @@
   <servlet-mapping>
     <servlet-name>ViewWord</servlet-name>
     <url-pattern>/view.html</url-pattern>
+    <url-pattern>/view</url-pattern>    
   </servlet-mapping>
   <servlet>
     <servlet-name>DeleteWord</servlet-name>

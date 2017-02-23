@@ -19,8 +19,6 @@ public class EditWordPairServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
-		String word = request.getParameter("word");
-		String pair = request.getParameter("translation");
 		WordPair w = new WordPairServiceImpl().getWordPair(id);
 		request.setAttribute("wordPair", w);
 		request.getRequestDispatcher("/WEB-INF/edit.jsp").forward(request, response);
