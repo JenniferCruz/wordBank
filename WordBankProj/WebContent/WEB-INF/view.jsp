@@ -6,7 +6,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Trylingual! | Viewing... </title> <!-- add word -->
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" > 
+	<!-- link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >  -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" > 
 	<link rel="stylesheet" type="text/css" href="css/styles.css" > 
 	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 	
@@ -16,7 +17,7 @@
 	<c:import url="/WEB-INF/jsp-snippets/header.jsp" />
 
 	<%if (request.getAttribute("wordPair") == null) {%>
-
+		<!-- TODO: Send 404 error in Servlet's response -->
         <div class="alert alert-danger" role="alert"><strong>Oh no!</strong> There was a problem loading this word from the database...</div>
 
     <%} else { %>
