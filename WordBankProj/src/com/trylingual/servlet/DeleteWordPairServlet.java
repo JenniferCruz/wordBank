@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.trylingual.model.WordPair;
+import com.trylingual.service.WordPairServiceImpl;
 
 public class DeleteWordPairServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -18,8 +19,7 @@ public class DeleteWordPairServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.sendRedirect("index.html");
 	}
 
 	/**
@@ -29,7 +29,7 @@ public class DeleteWordPairServlet extends HttpServlet {
 		String idParam = request.getParameter("id");
 		int id = (idParam != null && idParam.length() > 0) ? Integer.parseInt(idParam) : -1;
 		// System.out.println("id: " + id);	
-		// TODO: Implement deletion
+		new WordPairServiceImpl().delete(id);
 		doGet(request, response);
 	}
 
