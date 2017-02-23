@@ -8,6 +8,8 @@
 	<title>Trylingual! | Viewing... </title> <!-- add word -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" > 
 	<link rel="stylesheet" type="text/css" href="css/styles.css" > 
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+	
 </head>
 <body>
 
@@ -20,15 +22,15 @@
     <%} else { %>
 	
 		<div class="container">
-		  <div class="col-md-4 well word-view">
+		  <div class="col-md-4 word-view panel panel-primary">
 		    <p>${wordPair.getWord()}</p> 
 		  </div>
-		  <div class="translates-to col-md-2">
-		  	<i class="glyphicon glyphicon-chevron-left"></i>
+		  <div class="translates-to">
+		  	<i class="glyphicon glyphicon-menu-left em3"></i>
 		  	<i>translates to</i>
-		  	<i class="glyphicon glyphicon-chevron-right"></i>
+		  	<i class="glyphicon glyphicon-menu-right em3"></i>
 		  </div>
-		  <div class="col-md-4 well word-view">
+		  <div class="col-md-4 word-view panel panel-primary">
 		    <p>${wordPair.getPair()}</p> 
 		  </div>
 		</div>

@@ -10,6 +10,8 @@
 	<title>Editing word...</title>
 	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" > 
 	<link rel="stylesheet" type="text/css" href="css/styles.css" > 
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+	
 </head>
 <body>
 
@@ -35,12 +37,15 @@
 	      <button type="submit" class="btn btn-default">Save changes</button>
 		  <a href="index.html" class="btn btn-default">Cancel</a>
 		  <a href="index.html" class="pull-right">Go back to list<i class="glyphicon glyphicon-menu-right"></i></a>
+		  <a href="#confirmDeleteModal" class="" data-toggle="modal" data-word-id="${wordPair.id()}"><i class="glyphicon glyphicon-trash"></i>Delete</a>
 	    </div>
 	  </div>
 	</form>
 	
+
 	<c:import url="/WEB-INF/jsp-snippets/required-js.jsp" />
 	<c:import url="/WEB-INF/jsp-snippets/add-new-word-modal.jsp" />
+	<c:import url="/WEB-INF/jsp-snippets/confirm-delete-modal.jsp" />
 	
 </body>
 </html>

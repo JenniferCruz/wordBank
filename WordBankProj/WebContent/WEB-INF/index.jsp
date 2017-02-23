@@ -10,6 +10,7 @@
 	<title>Trylingual!</title>
 	<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" > 
 	<link rel="stylesheet" type="text/css" href="css/styles.css" > 
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 </head>
 <body>
 

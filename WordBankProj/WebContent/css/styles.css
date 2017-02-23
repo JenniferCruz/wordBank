@@ -4,9 +4,19 @@ body {
 	margin-right: auto;
 }
 
+h1, 
+h2,
+h3 {
+	font-family: 'Special Elite', cursive;
+}
+
 .glyphicon {
 	margin-left: 10px;
 	margin-right: 5px;
+}
+
+.em3 {
+	font-size: 3em;
 }
 
 .container {
@@ -18,8 +28,12 @@ body {
 
 .word-view {
 	/* overwrite Bootstrap */
-	/* margin: 5px; */
+	min-height: 4em;
 }
+
+.word-view p {
+    margin: 1em;
+}.
 
 .categories {
 	width: 750px;
@@ -32,4 +46,16 @@ body {
 	display: flex;
     align-items: center;
 }
+
+.linkeable-header,
+.linkeable-header:hover {
+	text-decoration: none;
+}
+
+.glyphicon-tags {
+	color: gray;
+}
+
+.glyphicon-tags:hover {
+	cursor: not-allowed;
 }
