@@ -1,9 +1,9 @@
 # WORDBANK
-WordBank is a non-interactive console project at the moment
-This means its 'view' is the console.
+Is a Java Web Application that allows the user to manage a list of words pairings (from a language to another).
 
 ## To get this running:
-You need to make sure the database and table are set properly.
+Make sure the database and table are set properly:
+
 #### Run the sql/wordbank.sql file.
 ###### Through the command line:
 - Go to the project directory
