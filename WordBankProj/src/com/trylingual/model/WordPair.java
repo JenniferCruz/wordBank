@@ -15,11 +15,15 @@ public class WordPair {
 	}
 
 	public WordPair(String left, String right) {
-		this.left = left;
-		this.right = right;
-		this.tags = new ArrayList<>();
+		this(left, right, new ArrayList<>());
 	}
 	
+	public WordPair(String word, String pair, List<String> tags) {
+		this.left = left;
+		this.right = right;
+		this.tags = tags;
+	}
+
 	public void changeWordTo(String left) {
 		if (left != null)
 			this.left = left;

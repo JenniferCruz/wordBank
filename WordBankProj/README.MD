@@ -10,4 +10,4 @@ Make sure the database and table are set properly:
 - Log in to mysql
 - Type: `source sql/wordbank.sql` 
 
-After this, you should be able to see the database when you type `SHOW DATABASES;`, and the table when you type `USE wordbank; SHOW TABLES;`;
+After this, you should be able to see the database when you type `SHOW DATABASES;`, and the 3 tables when you type `USE wordbank; SHOW TABLES;`;

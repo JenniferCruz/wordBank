@@ -22,11 +22,23 @@ public class WordPairDAOSql implements WordPairDAO {
 			Connection con = DriverManager.getConnection(url, "root", "password");
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM words;");
+			List<String> tags;
 			while (rs.next()){
 				String word = rs.getString("word");
 				String pair = rs.getString("pair");
-				w = new WordPair(word, pair);
-				w.setID(rs.getInt("word_id"));
+				int id = rs.getInt("word_id");
+				// TODO: What would be a more efficient way to do this?
+				tags = new ArrayList<>();
+				ResultSet rsTags = stmt.executeQuery(
+						"SELECT tag FROM tags WHERE "
+						+ "tag.tag_id = tags_to_words.tag_id "
+						+ "AND tags_to_words.word_id = " + id + ";");
+				while (rsTags.next()) 
+					tags.add(rsTags.getString("tag"));
+				//////
+				// w = new WordPair(word, pair);
+				w = new WordPair(word, pair, tags);
+				w.setID(id);
 				words.add(w);
 			}
 			stmt.close();
