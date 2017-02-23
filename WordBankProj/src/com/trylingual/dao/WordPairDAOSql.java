@@ -110,7 +110,6 @@ public class WordPairDAOSql implements WordPairDAO {
 		} catch (SQLException sqle) {
 			sqle.printStackTrace();
 		}
-		System.out.println("Back from SQL " + word);
 		return word;
 	}
 

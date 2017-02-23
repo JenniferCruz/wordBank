@@ -28,7 +28,6 @@ public class DeleteWordPairServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idParam = request.getParameter("id");
 		int id = (idParam != null && idParam.length() > 0) ? Integer.parseInt(idParam) : -1;
-		// System.out.println("id: " + id);	
 		new WordPairServiceImpl().delete(id);
 		doGet(request, response);
 	}
