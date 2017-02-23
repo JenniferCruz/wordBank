@@ -10,9 +10,7 @@ import java.util.List;
 import com.trylingual.model.WordPair;
 
 public class WordPairDAOFile implements WordPairDAO {
-	
-	// TODO: Make sql database
-	
+		
 	public List<WordPair> getWordPairs(int listID) {
 		/* Code adapted from 
 		 * https://www.mkyong.com/java/how-to-read-and-parse-csv-file-in-java/

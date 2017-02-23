@@ -8,7 +8,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Trylingual!</title>
-	<!-- link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >  -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" > 	<link rel="stylesheet" type="text/css" href="css/styles.css" > 
 	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
 </head>
@@ -31,10 +30,10 @@
 				<td class="translation">${wp.getPair()}</td>
 				<td class="tags">...</td>        
 				<td class="options">
-					<a href="view.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-eye-open"></i></a> <!-- TODO: Servlet - to practice -->
-					<a href="edit.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-pencil"></i></a> <!-- TODO: Servlet - to practice -->
-					<a href="#confirmDeleteModal" data-toggle="modal" data-word-id="${wp.id()}"><i class="glyphicon glyphicon-trash"></i></a> <!-- TODO: Pass id to modal -->
-					<a href="#tagWordFormModal" data-toggle="modal"><i class="glyphicon glyphicon-tags"></i></a> <!-- TODO: Pass id to modal -->
+					<a href="view.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-eye-open"></i></a> 
+					<a href="edit.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-pencil"></i></a> 
+					<a href="#confirmDeleteModal" data-toggle="modal" data-word-id="${wp.id()}"><i class="glyphicon glyphicon-trash"></i></a> 
+					<a href="#tagWordFormModal" data-toggle="modal"><i class="glyphicon glyphicon-tags"></i></a> 
 				</td>
 			</tr>
 		</c:forEach>
@@ -50,7 +49,6 @@
 	        <h4 class="modal-title" id="tagWordModal">Tags for ... </h4>
 	      </div>
 	      <div class="modal-body">
-			<!-- TODO: form -->	  
 			<form class="form-horizontal">
 				<input type="text" class="form-control" placeholder="category">
 				<input type="text" class="form-control" placeholder="category">

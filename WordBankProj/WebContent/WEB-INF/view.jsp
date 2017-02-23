@@ -19,6 +19,7 @@
 	<%if (request.getAttribute("wordPair") == null) {%>
 		<!-- TODO: Send 404 error in Servlet's response -->
         <div class="alert alert-danger" role="alert"><strong>Oh no!</strong> There was a problem loading this word from the database...</div>
+		<a href="index.html"><i class="glyphicon glyphicon-menu-left"></i>Go back to list</a>
 
     <%} else { %>
 	
@@ -41,17 +42,17 @@
 			<!-- TODO: Change message if there are not categories and add button to add categories -->
 			<ul class="list-group categories">
 			  <li class="list-group-item">...</li> <!-- TODO: generate categories -->
-			  <li class="list-group-item">...</li> <!-- TODO: generate categories -->
+			  <li class="list-group-item">...</li> 
 			</ul>
 		</div>	
-
+		<div class="options">
+			<a href="index.html"><i class="glyphicon glyphicon-menu-left"></i>Go back to list</a>
+			<a href="edit.html?id=${wordPair.id()}" class="pull-right"><i class="glyphicon glyphicon-pencil"></i>Edit</a>
+			<a href="#confirmDeleteModal" class="pull-right" data-toggle="modal" data-word-id="${wordPair.id()}"><i class="glyphicon glyphicon-trash"></i>Delete</a>	
+		</div>
     <%}%>
 	
-	<div class="options">
-		<a href="index.html"><i class="glyphicon glyphicon-menu-left"></i>Go back to list</a>
-		<a href="edit.html?id=${wordPair.id()}" class="pull-right"><i class="glyphicon glyphicon-pencil"></i>Edit</a>
-		<a href="#confirmDeleteModal" class="pull-right" data-toggle="modal" data-word-id="${wordPair.id()}"><i class="glyphicon glyphicon-trash"></i>Delete</a>	
-	</div>
+
 	
 	<c:import url="/WEB-INF/jsp-snippets/required-js.jsp" />
 	<c:import url="/WEB-INF/jsp-snippets/add-new-word-modal.jsp" />

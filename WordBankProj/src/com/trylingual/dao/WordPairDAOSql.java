@@ -11,8 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class WordPairDAOSql implements WordPairDAO {
-
-	// TODO: How to store tags in db?
 	
 	@Override
 	public List<WordPair> list() {
@@ -25,7 +23,6 @@ public class WordPairDAOSql implements WordPairDAO {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("SELECT * FROM words;");
 			while (rs.next()){
-				// TODO: How to store/retrieve tags?
 				String word = rs.getString("word");
 				String pair = rs.getString("pair");
 				w = new WordPair(word, pair);
@@ -60,7 +57,6 @@ public class WordPairDAOSql implements WordPairDAO {
 
 	@Override
 	public void update(WordPair word) {
-		// TODO:
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/wordbank";
@@ -104,7 +100,6 @@ public class WordPairDAOSql implements WordPairDAO {
 				word = new WordPair(rs.getString("word"), rs.getString("pair"));
 				word.setID(rs.getInt("wID"));				
 			}
-			// TODO: Add categories
 		} catch (ClassNotFoundException cnfe) {
 			cnfe.printStackTrace();
 		} catch (SQLException sqle) {
