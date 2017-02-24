@@ -28,15 +28,7 @@ public class WordPairDAOSql implements WordPairDAO {
 				String pair = rs.getString("pair");
 				int id = rs.getInt("word_id");
 				// TODO: What would be a more efficient way to do this?
-				tags = new ArrayList<>();
-				ResultSet rsTags = stmt.executeQuery(
-						"SELECT tag FROM tags WHERE "
-						+ "tag.tag_id = tags_to_words.tag_id "
-						+ "AND tags_to_words.word_id = " + id + ";");
-				while (rsTags.next()) 
-					tags.add(rsTags.getString("tag"));
-				//////
-				// w = new WordPair(word, pair);
+				tags = tags(id);
 				w = new WordPair(word, pair, tags);
 				w.setID(id);
 				words.add(w);
@@ -51,6 +43,27 @@ public class WordPairDAOSql implements WordPairDAO {
 		return words;
 	}
 
+	private List<String> tags(int wordId) {
+		List<String> tags = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost/wordbank";
+			Connection con = DriverManager.getConnection(url, "root", "password");
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(" SELECT tag FROM tags, tags_to_words "
+					+ "WHERE tags.tag_id = tags_to_words.tag_id "
+					+ "AND tags_to_words.word_id =" + wordId + ";");
+			while (rs.next()) 
+				tags.add(rs.getString("tag"));
+		} catch (ClassNotFoundException cnfe) {
+			cnfe.printStackTrace();
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+		return tags;
+	}
+	
+	
 	@Override
 	public void save(WordPair word) {
 		try {

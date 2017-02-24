@@ -18,7 +18,7 @@ public class WordPair {
 		this(left, right, new ArrayList<>());
 	}
 	
-	public WordPair(String word, String pair, List<String> tags) {
+	public WordPair(String left, String right, List<String> tags) {
 		this.left = left;
 		this.right = right;
 		this.tags = tags;
@@ -58,9 +58,13 @@ public class WordPair {
 	
 	@Override
 	public String toString() {
+		String tag = "";
+		for (String t : this.tags)
+			tag += t + ", ";
 		return "[id: " + this.id 
 				+ " | word: " + this.left 
-				+ " | translation: " + this.right + "]";
+				+ " | translation: " + this.right + "] " 
+				+ tag;
 	}
 
 	public int id() {
