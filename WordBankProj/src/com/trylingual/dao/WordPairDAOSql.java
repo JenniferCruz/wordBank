@@ -32,18 +32,17 @@ public class WordPairDAOSql implements WordPairDAO {
 				String pair = rs.getString("pair");
 				int id = rs.getInt("word_id");
 				String tag = rs.getString("tag");
-
-				if (w == null || w.getId() != id) {
+				System.out.println(id + ": " + word + " - " + pair + " - " + tag);
+				
+				if (w == null || w.id() != id) {
 					w = new WordPair(word, pair);
 					w.setID(id);
+					words.add(w);
 				}
 				
 				if (tag != null) 
-					w.tag(tag);
-				
-				words.add(w);
+					w.tag(tag);		
 			}
-			
 			stmt.close();
 			con.close();
 		} catch (ClassNotFoundException cnfe) {

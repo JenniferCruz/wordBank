@@ -28,7 +28,11 @@
 				<td class="word-id">${wp.id()}</td>
 				<td class="word">${wp.getWord()}</td>
 				<td class="translation">${wp.getPair()}</td>
-				<td class="tags">...</td>        
+				<td class="tags">
+					<c:forEach items="${wp.getTags()}" var="tag">
+						<p>${tag}</p>
+					</c:forEach>
+				</td>        
 				<td class="options">
 					<a href="view.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-eye-open"></i></a> 
 					<a href="edit.html?id=${wp.id()}" value="test"><i class="glyphicon glyphicon-pencil"></i></a> 
