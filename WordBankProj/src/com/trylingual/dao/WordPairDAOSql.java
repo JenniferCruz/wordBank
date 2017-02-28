@@ -15,24 +15,35 @@ public class WordPairDAOSql implements WordPairDAO {
 	@Override
 	public List<WordPair> list() {
 		List<WordPair> words = new ArrayList<>();
-		WordPair w;
+		WordPair w = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost/wordbank";
 			Connection con = DriverManager.getConnection(url, "root", "password");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM words;");
-			List<String> tags;
-			while (rs.next()){
+
+			ResultSet rs = stmt.executeQuery("SELECT words.word_id, words.word, "
+					+ "words.pair, tags.tag FROM words LEFT JOIN tags_to_words "
+					+ "ON words.word_id=tags_to_words.word_id LEFT JOIN tags "
+					+ "ON tags.tag_id=tags_to_words.tag_id ORDER BY words.word_id;");
+			
+			while (rs.next()) {
 				String word = rs.getString("word");
 				String pair = rs.getString("pair");
 				int id = rs.getInt("word_id");
-				// TODO: What would be a more efficient way to do this?
-				tags = tags(id);
-				w = new WordPair(word, pair, tags);
-				w.setID(id);
+				String tag = rs.getString("tag");
+
+				if (w == null || w.getId() != id) {
+					w = new WordPair(word, pair);
+					w.setID(id);
+				}
+				
+				if (tag != null) 
+					w.tag(tag);
+				
 				words.add(w);
 			}
+			
 			stmt.close();
 			con.close();
 		} catch (ClassNotFoundException cnfe) {
