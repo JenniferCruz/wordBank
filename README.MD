@@ -1,6 +1,7 @@
 # WORDBANK
-WordBank is a non-interactive console project at the moment
-This means its 'view' is the console.
+This is a small Java Web Application developed for the (Java Web Application Development I)[http://www.collin.edu/ce/courses/java_web_app_i_ii.html] course from Collin College.
+
+The course teached how to design and develop dynamic web sites using Java technologies. Content convered included Java Servlets and JavaServer Pages, basic database connectivity using the Java JDBC API and how to install, configure and administer a basic Java application server.
 
 ## To get this running:
 You need to make sure the database and table are set properly.
